@@ -1,0 +1,258 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, jpeg, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Timer1: TTimer;
+    Image6: TImage;
+    Image7: TImage;
+    Image8: TImage;
+    Image9: TImage;
+    Image10: TImage;
+    Timer2: TTimer;
+    Label1: TLabel;
+    procedure Timer1Timer(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure Image3Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
+    procedure Image5Click(Sender: TObject);
+    procedure Image6Click(Sender: TObject);
+    procedure Image7Click(Sender: TObject);
+    procedure Image8Click(Sender: TObject);
+    procedure Image9Click(Sender: TObject);
+    procedure Image10Click(Sender: TObject);
+    procedure Timer2Timer(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  x : integer;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+Image1.top:=Image1.top+1;
+Image2.top:=Image2.top+1;
+Image3.top:=Image3.top+1;
+Image4.top:=Image4.top+1;
+Image5.top:=Image5.top+1;
+Image6.top:=Image5.top+1;
+Image7.top:=Image5.top+1;
+Image8.top:=Image5.top+1;
+Image9.top:=Image5.top+1;
+Image10.top:=Image5.top+1;
+
+if Image1.top>(Form1.height-50) then
+begin
+Image1.top:=0;
+Image1.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image2.top>(Form1.height-50) then
+begin
+Image2.top:=0;
+Image2.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image3.top>(Form1.height-50) then
+begin
+Image3.top:=0;
+Image3.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image4.top>(Form1.height-50) then
+begin
+Image4.top:=0;
+Image4.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image5.top>(Form1.height-50) then
+begin
+Image5.top:=0;
+Image5.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image6.top>(Form1.height-50) then
+begin
+Image6.top:=0;
+Image6.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image7.top>(Form1.height-50) then
+begin
+Image7.top:=0;
+Image7.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image8.top>(Form1.height-50) then
+begin
+Image8.top:=0;
+Image8.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image9.top>(Form1.height-50) then
+begin
+Image9.top:=0;
+Image9.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+if Image10.top>(Form1.height-50) then
+begin
+Image10.top:=0;
+Image10.left:=random(Form1.width-Image1.width-50);
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+
+
+end;
+
+
+procedure TForm1.Image1Click(Sender: TObject);
+begin
+Image1.top:=0;
+Image1.left:=random(Form1.width-Image1.width-50);
+x:=x+1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+procedure TForm1.Image2Click(Sender: TObject);
+begin
+Image2.top:=0;
+Image2.left:=random(Form1.width-Image1.width-50);
+   x:=x+1;
+   label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+procedure TForm1.Image3Click(Sender: TObject);
+begin
+Image3.top:=0;
+Image3.left:=random(Form1.width-Image1.width-50);
+  x:=x+1;
+  label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+procedure TForm1.Image4Click(Sender: TObject);
+begin
+Image4.top:=0;
+Image4.left:=random(Form1.width-Image1.width-50);
+  x:=x+1;
+  label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+procedure TForm1.Image5Click(Sender: TObject);
+begin
+Image5.top:=0;
+Image5.left:=random(Form1.width-Image1.width-50);
+   x:=x+1;
+   label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+procedure TForm1.Image6Click(Sender: TObject);
+begin
+Image6.top:=0;
+Image6.left:=random(Form1.width-Image1.width-50);
+  x:=x+1;
+  label1.caption:='SCORUL: '+inttostr(x);
+end;
+procedure TForm1.Image7Click(Sender: TObject);
+begin
+Image7.top:=0;
+Image7.left:=random(Form1.width-Image1.width-50);
+   x:=x+1;
+   label1.caption:='SCORUL: '+inttostr(x);
+end;
+procedure TForm1.Image8Click(Sender: TObject);
+begin
+Image8.top:=0;
+Image8.left:=random(Form1.width-Image1.width-50);
+  x:=x+1;
+  label1.caption:='SCORUL: '+inttostr(x);
+end;
+procedure TForm1.Image9Click(Sender: TObject);
+begin
+Image9.top:=0;
+Image9.left:=random(Form1.width-Image1.width-50);
+  x:=x+1;
+  label1.caption:='SCORUL: '+inttostr(x);
+end;
+procedure TForm1.Image10Click(Sender: TObject);
+begin
+Image10.top:=0;
+Image10.left:=random(Form1.width-Image1.width-50);
+   x:=x+1;
+   label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+
+
+
+
+
+
+procedure TForm1.Timer2Timer(Sender: TObject);
+begin
+timer1.Enabled:=false;
+showmessage ('Jocul a luat sfarsit!');
+timer2.enabled:=false;
+showmessage ('Scorul este de ' + inttostr(x) + ' puncte. Felicitari! ');
+x:=0;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+x:=0;
+timer1.Enabled:=false;
+timer2.Enabled:=false;
+showmessage('Apasa oriunde pe forma pentru a incepe jocul. SUCCES!!! ');
+end;
+
+
+procedure TForm1.FormClick(Sender: TObject);
+begin
+timer2.enabled:=true;
+timer1.enabled:=true;
+x:=x-1;
+label1.caption:='SCORUL: '+inttostr(x);
+end;
+
+end.

@@ -1,8 +1,8 @@
-program bitmaps_animation_and_transparency_example;
+program Project1;
 
 uses
   Forms,
-  unit1 in 'unit1.pas' {Form1};
+  Unit1 in 'Unit1.pas' {Form1};
 
 {$R *.res}
 

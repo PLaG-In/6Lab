@@ -1,22 +1,31 @@
 unit Unit1;
 
+{$mode objfpc}{$H+}
+
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls;
+  Dialogs, ExtCtrls, StdCtrls, Vcl.MPlayer;
 
 type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
     AnimationTimer: TTimer;
+    MediaPlayer1: TMediaPlayer;
+    RadioGroup1: TRadioGroup;
+    procedure FormActivate(Sender: TObject);
     procedure AnimationTimerTimer(Sender: TObject);
+    procedure RadioGroup1Click(Sender: TObject);
     procedure FormPaint(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure LoadImageOrDie(var bmp: TBitmap; fileName: string);
   private
     FClickCount : Longint;
   public
@@ -25,7 +34,7 @@ type
   end;
 
 Const
-  BALL_SPEED = 0.01;
+  BALL_SPEED = 0.001;
   BALL_CENTER_X = 300;
   BALL_CENTER_Y = 200;
   BALL_RADIUS = 200;
@@ -33,7 +42,11 @@ Const
 var
   Form1: TForm1;
   background, backbuffer: TBitmap;
-  ball: TBitmap;
+  balloon1: TBitmap;
+  balloon2: TBitmap;
+  balloon3: TBitmap;
+  n,p,o: integer;
+  s: integer = 1;
 
 implementation
 
@@ -42,7 +55,7 @@ implementation
 Procedure ReDraw;
 Var
   x, y: Integer;
-  angle: Real;
+  down: Real;
 begin
   {1. –исуем все на backbuffer}
   {1.1. рисуем фон (поле с травой)}
@@ -50,11 +63,11 @@ begin
 
   {1.2. рисуем м€ч, вычисл€ем угол движени€ м€ча по кругу в зависимости
    от текущего времени}
-  angle := GetTickCount;
-  angle := angle * BALL_SPEED;
+  down := GetTickCount;
+  down := down * BALL_SPEED;
 
-  x := BALL_CENTER_X + Round(cos(angle) * BALL_RADIUS);
-  y := BALL_CENTER_Y + Round(sin(angle) * BALL_RADIUS);
+  x := BALL_CENTER_X + Round(cos(down) * BALL_RADIUS);
+  y := BALL_CENTER_Y + Round(sin(down) * BALL_RADIUS);
 
   x := x - ball.width Div 2;
   y := y - ball.height Div 2;
@@ -67,8 +80,53 @@ end;
 
 procedure TForm1.AnimationTimerTimer(Sender: TObject);
 begin
-  {перерисовываем все по таймеру}
+  Ballon1.Top:= Ballon1.top+s;
+  Shape2.Top:=shape2.top+s;
+  Shape3.Top:=shape3.top+s;
+  Shape4.Top:=shape4.top+s;
+  Shape5.Top:=shape5.top+s;
+  if shape1.top>Form1.height then
+  begin
+  shape1.top:=0;
+  shape1.left:=random(Form1.width-shape1.width-Panel1.Width);
+  n:=n+1;
+  end;
+
+  if shape2.top>Form1.height then
+  begin
+  shape2.top:=0;
+  shape2.left:=random(Form1.width-shape2.width-Panel1.Width);
+  n:=n+1;
+  end;
+
+  if shape3.top>Form1.height then
+  begin
+  shape3.top:=0;
+  shape3.left:=random(Form1.width-shape3.width-Panel1.Width);
+  n:=n+1;
+  end;
+
+  if shape4.top>Form1.height then
+  begin
+  shape4.top:=0;
+  shape4.left:=random(Form1.width-shape4.width-Panel1.Width);
+  n:=n+1;
+  end;
+
+  if shape5.top>Form1.height then
+  begin
+  shape5.top:=0;
+  shape5.left:=random(Form1.width-shape5.width-Panel1.Width);
+  n:=n+1;
+  end;
+
+  Label1.Caption:='ѕропусков ' + IntToStr(n);
   ReDraw;
+end;
+
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+  randomize;
 end;
 
 procedure TForm1.FormPaint(Sender: TObject);
@@ -92,14 +150,14 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   {создаем bitmap дл€ заднего фона}
   background := TBitmap.Create;
-  LoadImageOrDie(background, 'sky.bmp');
+  LoadImageOrDie(background, 'back.bmp');
 
   {создаем bitmap дл€ заднего м€ча}
-  ball := TBitmap.Create;
-  LoadImageOrDie(ball, '46.jpg');
+  balloon1 := TBitmap.Create;
+  LoadImageOrDie(balloon1, 'balloon3.bmp');
   {настраиваем прозрачность м€ча}
-  ball.Transparent := true;
-  ball.TransparentColor := clRed;
+  balloon1.Transparent := true;
+  balloon1.TransparentColor := clRed;
 
   {создаем backbuffer, размером с задний фон}
   backbuffer := TBitmap.Create;
@@ -112,13 +170,37 @@ begin
   {на выходе из формы удал€ем изображени€}
   background.Free;
   backbuffer.Free;
-  ball.Free;
+  balloon1.Free;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  o:=1;
+  if timer1.enabled=true then
+  begin
+  Timer1.Enabled:=false;
+  Button1.caption:='—тарт';
+  o:=0;
+  end;
+
+  if (timer1.Enabled = false) and (o=1) then
+  begin
+  timer1.enabled:=true;
+  Button1.Caption:='—топ';
+  end;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
   {включить анимацию (включить таймер)}
   AnimationTimer.Enabled := true;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  MediaPlayer1.FileName := 'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

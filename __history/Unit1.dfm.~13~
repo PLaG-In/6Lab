@@ -15,6 +15,7 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnClick = FormClick
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -9663,8 +9664,8 @@ object Form1: TForm1
     OnClick = Image10Click
   end
   object Label1: TLabel
-    Left = 652
-    Top = 8
+    Left = 632
+    Top = 542
     Width = 48
     Height = 14
     Caption = 'SCORE: '
@@ -9684,8 +9685,8 @@ object Form1: TForm1
     TabOrder = 0
   end
   object Button1: TButton
-    Left = 674
-    Top = 520
+    Left = 682
+    Top = 8
     Width = 75
     Height = 25
     Caption = 'Start'
@@ -9700,6 +9701,7 @@ object Form1: TForm1
   end
   object Timer2: TTimer
     Interval = 30000
+    OnTimer = Timer2Timer
     Left = 448
     Top = 456
   end

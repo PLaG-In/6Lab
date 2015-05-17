@@ -92,52 +92,112 @@ end;
 
 procedure TForm1.Image1Click(Sender: TObject);
 begin
-  BalloonsClick(Image1);
+  Image1.Top := 0;
+  Image1.Left := Random(Form1.width  -  Image1.Width - 50);
+  x := x + 1;
+  MediaPlayer1.FileName  :=  'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image2Click(Sender: TObject);
 begin
-  BalloonsClick(Image2);
+  Image2.Top := 0;
+  Image2.Left  :=  Random(Form1.Width  -  Image1.Width  -  50) ;
+  MediaPlayer1.FileName  :=  'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x  := x+1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image3Click(Sender: TObject);
 begin
-  BalloonsClick(Image3);
+  Image3.Top := 0;
+  Image3.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName  :=  'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image4Click(Sender: TObject);
 begin
-  BalloonsClick(Image4);
+  Image4.Top := 0;
+  Image4.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName  :=  'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image5Click(Sender: TObject);
 begin
-  BalloonsClick(Image5);
+  Image5.Top := 0;
+  Image5.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName  :=  'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image6Click(Sender: TObject);
 begin
-  BalloonsClick(Image6);
+  Image6.Top := 0;
+  Image6.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName  :=  'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image7Click(Sender: TObject);
 begin
-  BalloonsClick(Image7);
+  Image7.Top := 0;
+  Image7.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName := 'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image8Click(Sender: TObject);
 begin
-  BalloonsClick(Image8);
+  Image8.Top := 0;
+  Image8.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName := 'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image9Click(Sender: TObject);
 begin
-  BalloonsClick(Image9);
+  Image9.Top := 0;
+  Image9.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName := 'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 procedure TForm1.Image10Click(Sender: TObject);
 begin
-  BalloonsClick(Image10);
+  Image10.Top := 0;
+  Image10.Left := Random(Form1.Width - Image1.Width - 50);
+  MediaPlayer1.FileName  :=  'exp.wav';
+  MediaPlayer1.Open();
+  MediaPlayer1.Play;
+  x := x + 1;
+  Label1.Caption := 'SCORE: '+IntToStr(x);
 end;
 
 {procedure TForm1.Timer2Timer(Sender: TObject);
